@@ -1,0 +1,247 @@
+Sub SHARESTOCKAA()
+'
+' SHARESTOCKAA Macro
+' BUATSHARESTOKAA
+'
+
+'
+    Range("A1").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Cut
+    Range("B1").Select
+    ActiveSheet.Paste
+    Columns("A:A").Select
+    Selection.Delete Shift:=xlToLeft
+    Range("A5").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range("A5").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range("A5:C1074").Select
+    ActiveWindow.SmallScroll Down:=18
+    Range("A5:C1073").Select
+    ActiveWorkbook.Worksheets("Sheet1").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("Sheet1").Sort.SortFields.Add2 Key:=Range( _
+        "A5:A1073"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("Sheet1").Sort
+        .SetRange Range("A6:C1073")
+        .Header = xlNo
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A6").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Rows("6:11").Select
+    Selection.Delete Shift:=xlUp
+    Rows("7:12").Select
+    Selection.Delete Shift:=xlUp
+    Range("A7").Select
+    Cells.Find(What:="EMN", After:=ActiveCell, LookIn:=xlFormulas2, LookAt _
+        :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
+        False, SearchFormat:=False).Activate
+    Rows("141:145").Select
+    Selection.Delete Shift:=xlUp
+    ActiveWindow.SmallScroll Down:=6
+    Range("A144").Select
+    Cells.Find(What:="GGM-", After:=ActiveCell, LookIn:=xlFormulas2, LookAt _
+        :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
+        False, SearchFormat:=False).Activate
+    Rows("600:601").Select
+    Selection.Delete Shift:=xlUp
+    Range("A601").Select
+    Cells.Find(What:="INM-", After:=ActiveCell, LookIn:=xlFormulas2, LookAt _
+        :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
+        False, SearchFormat:=False).Activate
+    Rows("642:642").Select
+    ActiveWindow.SmallScroll Down:=24
+    Rows("642:667").Select
+    Selection.Delete Shift:=xlUp
+    Range("A642").Select
+    Cells.Find(What:="MKN", After:=ActiveCell, LookIn:=xlFormulas2, LookAt _
+        :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
+        False, SearchFormat:=False).Activate
+    Rows("660:661").Select
+    Selection.Delete Shift:=xlUp
+    Range("A661").Select
+    Cells.Find(What:="NIL", After:=ActiveCell, LookIn:=xlFormulas2, LookAt _
+        :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
+        False, SearchFormat:=False).Activate
+    ActiveWindow.SmallScroll Down:=39
+    Rows("707:750").Select
+    Selection.Delete Shift:=xlUp
+    Range("A708").Select
+    Cells.Find(What:="SSM", After:=ActiveCell, LookIn:=xlFormulas2, LookAt _
+        :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
+        False, SearchFormat:=False).Activate
+    Rows("838:847").Select
+    Selection.Delete Shift:=xlUp
+    Range("C838").Select
+    Selection.End(xlDown).Select
+    Range("C972").Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Range("A838:C972").Select
+    Range("C972").Activate
+    Range(Selection, Selection.End(xlToRight)).Select
+    ActiveWindow.ScrollColumn = 236
+    ActiveWindow.ScrollColumn = 233
+    ActiveWindow.ScrollColumn = 229
+    ActiveWindow.ScrollColumn = 225
+    ActiveWindow.ScrollColumn = 221
+    ActiveWindow.ScrollColumn = 217
+    ActiveWindow.ScrollColumn = 214
+    ActiveWindow.ScrollColumn = 210
+    ActiveWindow.ScrollColumn = 204
+    ActiveWindow.ScrollColumn = 198
+    ActiveWindow.ScrollColumn = 194
+    ActiveWindow.ScrollColumn = 187
+    ActiveWindow.ScrollColumn = 180
+    ActiveWindow.ScrollColumn = 170
+    ActiveWindow.ScrollColumn = 158
+    ActiveWindow.ScrollColumn = 147
+    ActiveWindow.ScrollColumn = 135
+    ActiveWindow.ScrollColumn = 125
+    ActiveWindow.ScrollColumn = 116
+    ActiveWindow.ScrollColumn = 107
+    ActiveWindow.ScrollColumn = 101
+    ActiveWindow.ScrollColumn = 94
+    ActiveWindow.ScrollColumn = 87
+    ActiveWindow.ScrollColumn = 80
+    ActiveWindow.ScrollColumn = 74
+    ActiveWindow.ScrollColumn = 69
+    ActiveWindow.ScrollColumn = 64
+    ActiveWindow.ScrollColumn = 61
+    ActiveWindow.ScrollColumn = 58
+    ActiveWindow.ScrollColumn = 56
+    ActiveWindow.ScrollColumn = 54
+    ActiveWindow.ScrollColumn = 53
+    ActiveWindow.ScrollColumn = 52
+    ActiveWindow.ScrollColumn = 50
+    ActiveWindow.ScrollColumn = 49
+    ActiveWindow.ScrollColumn = 48
+    ActiveWindow.ScrollColumn = 47
+    ActiveWindow.ScrollColumn = 46
+    ActiveWindow.ScrollColumn = 45
+    ActiveWindow.ScrollColumn = 44
+    ActiveWindow.ScrollColumn = 43
+    ActiveWindow.ScrollColumn = 42
+    ActiveWindow.ScrollColumn = 40
+    ActiveWindow.ScrollColumn = 39
+    ActiveWindow.ScrollColumn = 38
+    ActiveWindow.ScrollColumn = 36
+    ActiveWindow.ScrollColumn = 35
+    ActiveWindow.ScrollColumn = 33
+    ActiveWindow.ScrollColumn = 32
+    ActiveWindow.ScrollColumn = 30
+    ActiveWindow.ScrollColumn = 29
+    ActiveWindow.ScrollColumn = 28
+    ActiveWindow.ScrollColumn = 26
+    ActiveWindow.ScrollColumn = 24
+    ActiveWindow.ScrollColumn = 23
+    ActiveWindow.ScrollColumn = 22
+    ActiveWindow.ScrollColumn = 21
+    ActiveWindow.ScrollColumn = 20
+    ActiveWindow.ScrollColumn = 19
+    ActiveWindow.ScrollColumn = 18
+    ActiveWindow.ScrollColumn = 17
+    ActiveWindow.ScrollColumn = 16
+    ActiveWindow.ScrollColumn = 15
+    ActiveWindow.ScrollColumn = 13
+    ActiveWindow.ScrollColumn = 12
+    ActiveWindow.ScrollColumn = 11
+    ActiveWindow.ScrollColumn = 10
+    ActiveWindow.ScrollColumn = 9
+    ActiveWindow.ScrollColumn = 6
+    ActiveWindow.ScrollColumn = 5
+    ActiveWindow.ScrollColumn = 3
+    ActiveWindow.ScrollColumn = 1
+    ActiveWindow.SmallScroll Down:=-12
+    Rows("838:838").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    ActiveWindow.SmallScroll Down:=-12
+    Range("C838").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlDown).Select
+    Selection.End(xlDown).Select
+    Range("C972").Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Range("A838:C972").Select
+    Range("C972").Activate
+    Selection.Delete Shift:=xlUp
+    ActiveWindow.SmallScroll Down:=-141
+    Range("C971").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    ActiveWindow.SmallScroll Down:=-3
+    Range(Selection, Selection.End(xlDown)).Select
+    Range("C5").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlToLeft).Select
+    
+    Range("A5").Select
+    Selection.End(xlToRight).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.TextToColumns Destination:=Range("C5"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=True, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Selection.NumberFormat = "General"
+    Selection.End(xlUp).Select
+    Selection.End(xlToLeft).Select
+End Sub
+Sub SHARESTOKAA_N1()
+'
+' SHARESTOKAA_N1 Macro
+'
+
+'
+    Range("A5").Select
+    Selection.End(xlToRight).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.TextToColumns Destination:=Range("C5"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=True, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Selection.NumberFormat = "General"
+    Selection.End(xlUp).Select
+    Selection.End(xlToLeft).Select
+End Sub
