@@ -1,0 +1,474 @@
+Sub SHARESTOKnpiTAHAP1()
+'
+' SHARESTOKnpiTAHAP1 Macro
+'
+
+'
+    Selection.End(xlToLeft).Select
+    Selection.End(xlToLeft).Select
+    Selection.End(xlUp).Select
+    Range("A2").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlDown).Select
+    Selection.End(xlUp).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Cut
+    Range("B1").Select
+    ActiveSheet.Paste
+    Columns("A:A").Select
+    Selection.Delete Shift:=xlToLeft
+    Columns("A:A").EntireColumn.AutoFit
+    Selection.End(xlUp).Select
+    Selection.End(xlDown).Select
+    Selection.End(xlDown).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Application.CutCopyMode = False
+    ActiveSheet.ListObjects.Add(xlSrcRange, Range("$A$5:$E$1093"), , xlNo).Name = _
+        "Table1"
+    Range("A5:E1094").Select
+    ActiveWorkbook.Queries.Add Name:="Table1", Formula:= _
+        "let" & Chr(13) & "" & Chr(10) & "    Source = Excel.CurrentWorkbook(){[Name=""Table1""]}[Content]," & Chr(13) & "" & Chr(10) & "    #""Changed Type"" = Table.TransformColumnTypes(Source,{{""Column1"", type text}, {""Column2"", type text}, {""Column3"", type text}, {""Column4"", type text}, {""Column5"", Int64.Type}})," & Chr(13) & "" & Chr(10) & "    #""Added Custom"" = Table.AddColumn(#""Changed Type"", ""KODE BARANG"", each if [Column1] <> null a" & _
+        "nd [Column1] <> """" then [Column1] else [Column2])," & Chr(13) & "" & Chr(10) & "    #""Added Custom1"" = Table.AddColumn(#""Added Custom"", ""DESKRIPSI BARANG"", each if [Column3] <> null and [Column3] <> """" then [Column3] else [Column4])," & Chr(13) & "" & Chr(10) & "    #""Added Custom2"" = Table.AddColumn(#""Added Custom1"", ""STOK"", each [Column5])," & Chr(13) & "" & Chr(10) & "    #""Removed Columns"" = Table.RemoveColumns(#""Added Custom" & _
+        "2"",{""Column1"", ""Column2"", ""Column3"", ""Column4"", ""Column5""})," & Chr(13) & "" & Chr(10) & "    #""Sorted Rows"" = Table.Sort(#""Removed Columns"",{{""KODE BARANG"", Order.Ascending}})," & Chr(13) & "" & Chr(10) & "    #""Filtered Rows"" = Table.SelectRows(#""Sorted Rows"", each [KODE BARANG] <> null and [KODE BARANG] <> """")" & Chr(13) & "" & Chr(10) & "in" & Chr(13) & "" & Chr(10) & "    #""Filtered Rows"""
+    ActiveWorkbook.Worksheets.Add
+    With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+        "OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=Table1;Extended Properties=""""" _
+        , Destination:=Range("$A$1")).QueryTable
+        .CommandType = xlCmdSql
+        .CommandText = Array("SELECT * FROM [Table1]")
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = True
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .PreserveColumnInfo = True
+        .ListObject.DisplayName = "Table1_2"
+        .Refresh BackgroundQuery:=False
+    End With
+    
+    '
+' sharestokNPITahap2 Macro
+'
+
+'
+    Selection.End(xlDown).Select
+    Selection.End(xlUp).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Copy
+    Sheets("Sheet1").Select
+    Range("A6").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlDown).Select
+    Selection.End(xlDown).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Rows("5:1094").Select
+    Application.CutCopyMode = False
+    Selection.Delete Shift:=xlUp
+    Selection.Delete Shift:=xlUp
+    Range("A4").Select
+    Sheets("Sheet2").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Copy
+    Sheets("Sheet1").Select
+    ActiveSheet.Paste
+    Range("A4").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Application.CutCopyMode = False
+    ActiveSheet.ListObjects("Table1_24").Unlist
+    With Selection.Font
+        .ColorIndex = xlAutomatic
+        .TintAndShade = 0
+    End With
+    With Selection.Interior
+        .Pattern = xlNone
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Range("A4").Select
+    Selection.End(xlToRight).Select
+    Range("D4").Select
+    ActiveCell.FormulaR1C1 = "FISIK"
+    Range("E4").Select
+    ActiveCell.FormulaR1C1 = "SELISIH"
+    Range("F4").Select
+    ActiveCell.FormulaR1C1 = "BUFFER"
+    Range("G4").Select
+    ActiveCell.FormulaR1C1 = "PENDING PO"
+    Range("H4").Select
+    ActiveCell.FormulaR1C1 = "KETERANGAN"
+    Range("I4").Select
+    Selection.End(xlToLeft).Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Range("G4").Select
+    Selection.End(xlToLeft).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideVertical)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideHorizontal)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    Selection.End(xlUp).Select
+    Range("A2").Select
+    Selection.End(xlDown).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlToRight).Select
+    Selection.End(xlToLeft).Select
+    Range("A3").Select
+    Selection.End(xlToRight).Select
+    Selection.End(xlToLeft).Select
+    Range("A4").Select
+    Selection.End(xlToRight).Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Selection.End(xlToLeft).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Range("B1").Select
+    Selection.End(xlDown).Select
+    Selection.End(xlToRight).Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Selection.Font.Bold = True
+    With Selection.Font
+        .Name = "Calibri"
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontMinor
+    End With
+    With Selection.Font
+        .Name = "Calibri"
+        .Size = 10
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontMinor
+    End With
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("G4").Select
+    Selection.End(xlToLeft).Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Columns.AutoFit
+    Selection.End(xlToLeft).Select
+    Range("A2").Select
+    Selection.End(xlUp).Select
+    Range("A1:A3").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Range("A1:H3").Select
+    Selection.Merge True
+    Selection.End(xlDown).Select
+    Selection.End(xlUp).Select
+    Range("A4").Select
+    Selection.End(xlToRight).Select
+    
+    '
+' Macro8 Macro
+'
+
+'
+    Sheets("Sheet2").Select
+    ActiveWindow.SelectedSheets.Delete
+    Range("A5").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWindow.ScrollRow = 864
+    ActiveWindow.ScrollRow = 850
+    ActiveWindow.ScrollRow = 767
+    ActiveWindow.ScrollRow = 677
+    ActiveWindow.ScrollRow = 640
+    ActiveWindow.ScrollRow = 613
+    ActiveWindow.ScrollRow = 564
+    ActiveWindow.ScrollRow = 521
+    ActiveWindow.ScrollRow = 472
+    ActiveWindow.ScrollRow = 451
+    ActiveWindow.ScrollRow = 427
+    ActiveWindow.ScrollRow = 384
+    ActiveWindow.ScrollRow = 365
+    ActiveWindow.ScrollRow = 350
+    ActiveWindow.ScrollRow = 334
+    ActiveWindow.ScrollRow = 310
+    ActiveWindow.ScrollRow = 299
+    ActiveWindow.ScrollRow = 283
+    ActiveWindow.ScrollRow = 268
+    ActiveWindow.ScrollRow = 253
+    ActiveWindow.ScrollRow = 229
+    ActiveWindow.ScrollRow = 219
+    ActiveWindow.ScrollRow = 208
+    ActiveWindow.ScrollRow = 190
+    ActiveWindow.ScrollRow = 180
+    ActiveWindow.ScrollRow = 170
+    ActiveWindow.ScrollRow = 160
+    ActiveWindow.ScrollRow = 154
+    ActiveWindow.ScrollRow = 147
+    ActiveWindow.ScrollRow = 140
+    ActiveWindow.ScrollRow = 132
+    ActiveWindow.ScrollRow = 125
+    ActiveWindow.ScrollRow = 120
+    ActiveWindow.ScrollRow = 115
+    ActiveWindow.ScrollRow = 111
+    ActiveWindow.ScrollRow = 106
+    ActiveWindow.ScrollRow = 104
+    ActiveWindow.ScrollRow = 102
+    ActiveWindow.ScrollRow = 97
+    ActiveWindow.ScrollRow = 93
+    ActiveWindow.ScrollRow = 92
+    ActiveWindow.ScrollRow = 87
+    ActiveWindow.ScrollRow = 84
+    ActiveWindow.ScrollRow = 81
+    ActiveWindow.ScrollRow = 77
+    ActiveWindow.ScrollRow = 75
+    ActiveWindow.ScrollRow = 72
+    ActiveWindow.ScrollRow = 70
+    ActiveWindow.ScrollRow = 68
+    ActiveWindow.ScrollRow = 66
+    ActiveWindow.ScrollRow = 63
+    ActiveWindow.ScrollRow = 62
+    ActiveWindow.ScrollRow = 60
+    ActiveWindow.ScrollRow = 57
+    ActiveWindow.ScrollRow = 55
+    ActiveWindow.ScrollRow = 52
+    ActiveWindow.ScrollRow = 50
+    ActiveWindow.ScrollRow = 46
+    ActiveWindow.ScrollRow = 44
+    ActiveWindow.ScrollRow = 43
+    ActiveWindow.ScrollRow = 39
+    ActiveWindow.ScrollRow = 36
+    ActiveWindow.ScrollRow = 35
+    ActiveWindow.ScrollRow = 33
+    ActiveWindow.ScrollRow = 32
+    ActiveWindow.ScrollRow = 29
+    ActiveWindow.ScrollRow = 27
+    ActiveWindow.ScrollRow = 25
+    ActiveWindow.ScrollRow = 23
+    ActiveWindow.ScrollRow = 20
+    ActiveWindow.ScrollRow = 18
+    ActiveWindow.ScrollRow = 17
+    ActiveWindow.ScrollRow = 14
+    ActiveWindow.ScrollRow = 13
+    ActiveWindow.ScrollRow = 11
+    ActiveWindow.ScrollRow = 9
+    ActiveWindow.ScrollRow = 7
+    ActiveWindow.ScrollRow = 5
+    ActiveWindow.ScrollRow = 2
+    ActiveWindow.ScrollRow = 1
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlToLeft)).Select
+    Range("A1:H1").Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Selection.End(xlUp).Select
+    Range("A4").Select
+    Range(Selection, Selection.End(xlToRight)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.FormatConditions.Add Type:=xlExpression, Formula1:= _
+        "=NOT(ISNUMBER(SEARCH(""-""; $A5)))"
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Font
+        .Bold = True
+        .Italic = False
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = True
+    ActiveWindow.SmallScroll Down:=-3
+
+
+
+    
+End Sub
